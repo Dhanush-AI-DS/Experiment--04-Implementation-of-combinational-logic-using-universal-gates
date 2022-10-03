@@ -27,17 +27,62 @@ NOR gate is actually a combination of two logic gates: OR gate followed by NOT g
 F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
 ## Logic Diagram
-## Procedure
+## Procedure:
+    1.Create a project with required entities.
+    2.Create a module along with respective file name.
+    3.Run the respective programs for the given boolean equations.
+    4.Run the module and get the respective RTL outputs.
+    5.Create university program(VWF) for getting timing diagram.
+    6.Give the respective inputs for timing diagram and obtain the results.
 ## Program:
-/*
+```
+
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: DHANUSH S
+RegisterNumber:212221230020
+
+
+Using NAND Operation:
+
+module comb1(A,B,C,D,F);
+input A,B,C,D;
+output F;
+wire P,Q,R;
+assign P = C&(~B)&(~A);
+assign Q = D&(~C)&(~A);
+assign R = (~C)&B&(~A);
+assign F = (~P&~Q&~R);
+endmodule
+
+Using NOR Operation:
+
+module comb2(A,B,C,D,F);
+input A,B,C,D;
+output F;
+wire P,Q,R,S;
+assign P = C&(~B)&A;
+assign Q = D&(~C)&A;
+assign R = C&(~B)&A;
+assign S = ~(P|Q|R);
+assign F = ~S;
+endmodule
+
+```
 ## RTL realization
 
 ## Output:
+### Using NAND Operation:
+![o](kk1.png)
+### Truth Table:
+![o](kk2.png)
+
+### vUsing NOR Operation:
+![o](kk3.png)
 ## RTL
-## Timing Diagram
+![o](kk4.png)
+### Truth Table:
+![o](kk5.png)
+## Timing Diagram:
+![o](kk6.png)
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
